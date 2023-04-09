@@ -1,5 +1,5 @@
 ---
-- name: Gather Custom Fact
+- name: Gather all Fact using setup module
   hosts: localhost
   tasks:
   - name: Show Facts
