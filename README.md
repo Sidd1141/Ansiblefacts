@@ -12,27 +12,8 @@ Gathering Facts
 
 To gather facts about a remote host, you simply need to run an Ansible task that collects them. Ansible provides a built-in setup module that retrieves a wide range of facts about the target host.
 
-code/playbook
 
-
----
-- name: Gather Facts
- 
- hosts: web_servers
- 
- gather_facts: yes
- 
- tasks:
-   
-   - name: Show Facts
-    
-     debug:
-        
-        var: ansible_facts
-
-
-
-In this playbook, the setup module is implicitly called when gather_facts is set to yes. The debug task then prints out all of the gathered facts using the ansible_facts variable.
+In this setup  playbook, the setup module is implicitly called when gather_facts is set to yes. The debug task then prints out all of the gathered facts using the ansible_facts variable.
 
 
 Conclusion
