@@ -1,0 +1,8 @@
+---
+- name: Gather Custom Fact
+  hosts: localhost
+  tasks:
+  - name: Show Facts
+      debug:
+        var: ansible_facts
+      register: ansible_facts
