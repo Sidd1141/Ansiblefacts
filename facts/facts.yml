@@ -1,0 +1,15 @@
+- name: playbook to retrive facts of target/ server nodes.
+  hosts: all
+  vars:
+  tasks:
+  - name: task to retrive fqdn data of target nodes in prod group
+    debug:
+      var: ansible_fqdn
+
+    when: inventory_hostname in groups['prod']
+
+  - name: task to retrive hostname data of target nodes in test and deploy group
+    debug:
+      var: ansible_hostname
+
+    when: inventory_hostname in groups['deploy']  or inventory_hostname in groups['test']
