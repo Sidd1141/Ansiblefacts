@@ -5,22 +5,18 @@
   - name: task to retrive fqdn data of target nodes in prod group
     debug:
       var: ansible_fqdn
-
     when: inventory_hostname in groups['prod']
 
   - name: task to retrive hostname data of target nodes in test and deploy group
     debug:
       var: ansible_hostname
-
     when: inventory_hostname in groups['deploy']  or inventory_hostname in groups['test']
  - name: task to retrive hostname data of target nodes in test and deploy group
     debug:
       var: ansible_default_ipv4.address
-
     when: inventory_hostname in groups['deploy']  or inventory_hostname in groups['test']
 
   - name: task to retrive hostname data of target nodes in test and deploy group
     debug:
       var: ansible_default_ipv4['gateway']
-
     when: inventory_hostname in groups['prod']  or inventory_hostname in groups['test']
